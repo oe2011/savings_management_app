@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/view/home.dart';
+import 'package:flutter_application_1/view/home_view.dart';
+import 'package:flutter_application_1/view/setting_view.dart';
 final goRouter = GoRouter(
   // アプリが起動した時
   initialLocation: '/home',
@@ -13,6 +14,17 @@ final goRouter = GoRouter(
         return MaterialPage(
           key: state.pageKey,
           child: const Home(),
+        );
+      },
+    ),
+
+    GoRoute(
+      path: '/setting',
+      name: 'setting',
+      pageBuilder: (context, state) {
+        return MaterialPage(
+          key: state.pageKey,
+          child: Setting(),
         );
       },
     ),
